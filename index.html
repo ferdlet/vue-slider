@@ -12,33 +12,35 @@
 </head>
 <body class="debug">
     
-    <main>
-        <div class="slider">
-            <div class="container-items">
-                <div class="item">
-                    <div class="container_title">
-                        <h1>${title[i]}</h1>
-                        <p>${text[i]}</p>
+    <div id="root">
+        <main>
+            <div class="slider">
+                <div class="container-items">
+                    <div class="item">
+                        <div class="container_title">
+                            <h1>${title[i]}</h1>
+                            <p>${text[i]}</p>
+                        </div>
+                        <img src="${items[i]}" alt="${items[i]}">
                     </div>
-                    <img src="${items[i]}" alt="${items[i]}">
+        
                 </div>
-                
+                <div class="container-thumbnails">
+                    <div class="btn_up">
+                        <i class="fas fa-chevron-up"></i>
+                    </div>
+                    <div class="btn_down">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="thumbnail">
+                        <div class="layover"></div>
+                        <img src="${items[i]}" alt="${items[i]}">
+                    </div>
+        
+                </div>
             </div>
-            <div class="container-thumbnails">
-                <div class="btn_up">
-                    <i class="fas fa-chevron-up"></i>
-                </div>
-                <div class="btn_down">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="thumbnail">
-                    <div class="layover"></div>
-                    <img src="${items[i]}" alt="${items[i]}">
-                </div>
-               
-            </div>
-        </div>
-    </main>
+        </main>
+    </div>
 
 
     <!-- development version, includes helpful console warnings -->
