@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    height: 70vh;
+    width: 70%;
+    display: flex;  
+}
+
+.container-items {
+    width: 80%;
+    height: 100%;
+}
+
+.container-thumbnails {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: auto;
+}
+
+.btn_up, .btn_down {
+    width: 30px;
+    height: 30px;
+    background-color: gray;
+    border-radius: 1em;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    line-height: 30px;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.btn_up {
+    top: 10px;
+}
+
+.btn_down {
+    bottom: 10px;
+}
+
+.item {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: relative;
+}
+
+.item.active {
+    display: block;
+}
+
+.item img {
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.item .container_title {
+    text-align: end;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    color: white;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 30px;
+    flex-direction: column;
+}
+
+.item .container_title h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.item .container_title p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.thumbnail {
+    width: 100%;
+    position: relative;
+}
+
+.thumbnail img {
+    height: calc(70vh / 5);
+}
+
+.thumbnail .layover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.layover.active {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+
+
+
+
+
+
+/* ***** debug ***** */
+/* .debug .container-items {
+    background-color: green;
+}
+
+.debug .container-thumbnails {
+    background-color: aqua;
+} */
