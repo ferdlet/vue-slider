@@ -28,7 +28,8 @@ const app = new Vue({
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam.'
             }
         ],
-        currentItems: 0
+        currentItems: 0,
+        autolplay: 0
     },
     methods: {
         nextItems: function () {
@@ -46,8 +47,16 @@ const app = new Vue({
             }
         },
         selectItems: function (index) {
-            this.currentItems= index;
-        }
+            this.currentItems = index;
+        },
+        play: function () {
+            this.autoplay = setInterval(function () {
+                app.nextItems();
+            }, 3000);
+        },
+        stop: function () {
+            clearInterval(this.autoplay);
+        },
     }
 })
 
