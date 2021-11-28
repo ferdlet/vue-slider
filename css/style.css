@@ -56,13 +56,13 @@ main {
 .item {
     width: 100%;
     height: 100%;
-    display: none;
+    /* display: none; */
     position: relative;
 }
 
-.item.active {
+/* .item.active {
     display: block;
-}
+} */
 
 .item img {
     height: 100%;
@@ -120,7 +120,7 @@ img {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.layover.active {
+.active>.layover {
     background-color: transparent;
     border: 2px solid white;
 }

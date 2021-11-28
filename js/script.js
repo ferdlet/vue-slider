@@ -14,23 +14,40 @@ const app = new Vue({
             },
             {
                 title: 'Gran Bretagna',
-                title: 'img/03.jpg',
+                image: 'img/03.jpg',
                 text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
             },
             {
                 title: 'Germania',
-                title: 'img/04.jpg',
+                image: 'img/04.jpg',
                 text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam.'
             },
             {
                 title: 'Paradise',
-                title: 'img/05.jpg',
+                image: 'img/05.jpg',
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam.'
             }
-        ]
+        ],
+        currentItems: 0
     },
     methods: {
-        
+        nextItems: function () {
+            if (this.currentItems == this.items.length - 1) {
+                this.currentItems = 0;
+            } else {
+                this.currentItems++;
+            }
+        },
+        prevItems: function () {
+            if (this.currentItems == 0) {
+                this.currentItems = this.items.length - 1;
+            } else {
+                this.currentItems--;
+            }
+        },
+        selectItems: function (index) {
+            this.currentItems= index;
+        }
     }
 })
 

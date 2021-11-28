@@ -18,23 +18,23 @@
                 <div class="container-items">
                     <div class="item">
                         <div class="container_title">
-                            <h1>${title[i]}</h1>
-                            <p>${text[i]}</p>
+                            <h1>{{items[currentItems].title}}</h1>
+                            <p>{{items[currentItems].text}}</p>
                         </div>
-                        <img src="${items[i]}" alt="${items[i]}">
+                        <img :src="items[currentItems].image" :alt="items[currentItems].image">
                     </div>
         
                 </div>
                 <div class="container-thumbnails">
-                    <div class="btn_up">
+                    <div class="btn_up" @click="prevItems()">
                         <i class="fas fa-chevron-up"></i>
                     </div>
-                    <div class="btn_down">
+                    <div class="btn_down" @click="nextItems()">
                         <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="thumbnail">
+                    <div class="thumbnail" v-for="(item, index) in items" :class="index == currentItems ? 'active' : ''" @click="selectItems(index)">
+                        <img :src="item.image" :alt="item.image">
                         <div class="layover"></div>
-                        <img src="${items[i]}" alt="${items[i]}">
                     </div>
         
                 </div>
