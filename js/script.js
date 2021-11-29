@@ -29,7 +29,7 @@ const app = new Vue({
             }
         ],
         currentItems: 0,
-        autolplay: 0
+        autolplay: null
     },
     methods: {
         nextItems: function () {
@@ -50,13 +50,16 @@ const app = new Vue({
             this.currentItems = index;
         },
         play: function () {
-            this.autoplay = setInterval(function () {
-                app.nextItems();
+            this.autoplay = setInterval(() => {
+               this.nextItems();
             }, 3000);
         },
         stop: function () {
             clearInterval(this.autoplay);
         },
+    },
+    mounted: function () {
+        this.play();
     }
 })
 
